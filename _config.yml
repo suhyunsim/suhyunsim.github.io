@@ -13,6 +13,14 @@ author:
   url:          https://suhyunsim.github.io
   email:        pcn021152@gmail.com
 
+navigation:
+  - name: Blog
+    url: /
+  - name: About
+    url: /about
+  - name: Tags
+    url: /tags  
+
 # Build settings
 markdown:       kramdown
 include:
@@ -39,3 +47,11 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 
 # Disqus (Set to your disqus id)
 disqus:         pcn02115
+
+category_dir: categories/
+category_list: [ TIL, BackEnd, Algorithm, Others]
+
+tag_dir: tags/
+
+# #Scripts
+# search: true
