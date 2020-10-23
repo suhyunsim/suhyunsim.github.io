@@ -8,18 +8,7 @@
       <li><a href="{{ site.baseurl }}/">Posts</a></li>
       <li><a href="{{ '/categories' | prepend: site.baseurl }}">Categories</a></li>
       <li><a href="{{ '/tags' | prepend: site.baseurl }}">Tags</a></li>
-
-      <!-- Search bar -->
-      {% if site.theme_settings.search %}
-      <li>
-      <form action="{{ site.baseurl }}/search.html" method="get">
-        <input type="text" id="search-box" name="query" placeholder="Search" class="">
-        <button type="submit" class="">
-          <i class="fa fa-fw fa-search"></i>
-        </button>
-      </form>
-      </li>
-      {% endif %}
+      <li><a href= "{{ '/search' | prepend: site.baseurl }}">Search</a></li>
     </ul>
   </div>
 </nav>
