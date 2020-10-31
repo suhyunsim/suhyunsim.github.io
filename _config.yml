@@ -67,7 +67,7 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 disqus:         suhyunsim-github-io
 
 category_dir: categories/
-category_list: [ TIL, BackEnd, Algorithm, Others]
+category_list: [ Project, BackEnd, Algorithm, TIL, Others]
 
 tag_dir: tags/
 
