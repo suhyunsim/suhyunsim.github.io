@@ -2,7 +2,7 @@
 layout: post
 title: "Photo Tag 개발기록 - 1"
 author: "Poogle"
-categories: [Project, BackEnd]
+categories: [Project]
 comments: true
 tag: [Project, Photo-Tag]
 
