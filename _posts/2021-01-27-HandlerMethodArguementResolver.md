@@ -2,7 +2,7 @@
 layout: post
 title: "HandlerMethodArguementResolver"
 author: "Poogle"
-categories: [Backend]
+categories: [BackEnd]
 comments: true
 tag: [Pageable, offset, limit, HandlerMethodArguementResolver]
 
