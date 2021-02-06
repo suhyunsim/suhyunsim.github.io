@@ -23,9 +23,14 @@ layout: default
   {{ content }}
 </div>
 
-{% if page.comments %}
-  {% include disqus_comments.html %}
-{% endif %}
+<script src="https://utteranc.es/client.js"
+        repo="suhyunsim/suhyunsim.github.io"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
 <div class="pagination">
   {% if page.next.url %}
