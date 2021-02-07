@@ -10,7 +10,7 @@ google_analytics: UA—XXXXXXXX-X
 # Author
 author:
   name:         Suhyun Sim
-  url:          https://suhyunsim.github.io
+  url:          https://suhyunsim.github.io/
   email:        pcn021152@gmail.com
 
 navigation:
@@ -55,6 +55,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-algolia
+  - jekyll-sitemap
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
