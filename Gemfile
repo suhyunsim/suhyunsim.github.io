@@ -6,5 +6,5 @@ gemspec
 
 group :jekyll_plugins do
     gem 'jekyll-algolia', '~> 1.6.0'
-    # gem 'jekyll-sitemap'
+    gem 'jekyll-sitemap'
 end
