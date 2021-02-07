@@ -54,6 +54,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-algolia
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
@@ -70,4 +71,13 @@ category_dir: categories/
 category_list: [ Project, BackEnd, Algorithm, TIL, Others]
 
 # #Scripts
-# search: true
+
+search                   : true 
+search_full_content      : true
+search_provider          : algolia
+
+# algolia search
+algolia:
+  application_id         : Z27QYIVRRG 
+  index_name             : poogle_log 
+  search_only_api_key    : 6d9236470626d9d7d4c7fe216034125c
