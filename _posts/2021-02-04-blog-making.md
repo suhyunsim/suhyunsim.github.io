@@ -244,7 +244,45 @@ layout: null
 </urlset>
 ```
 
-- 파일을 추가하고 GitHub에 push해 해당 파일이 생성되었는지 확인합니다. `https://{user}.github.io/sitemap.xml` 로 접근하면 됩니다.
+- RSS feed.xml 파일 추가하기
+- 웹 콘텐츠 전달을 위해 rss를 추가합니다.
+
+```xml
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for post in site.posts limit:30 %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.tags %}
+        <category>{{ tag | xml_escape }}</category>
+        {% endfor %}
+        {% for cat in post.categories %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
+```
+
+- 파일을 추가하고 GitHub에 push해 해당 파일이 생성되었는지 확인합니다.
+    - `https://{user}.github.io/sitemap.xml` 로 접근하면 됩니다.
+    - `https://{user}.github.io/feed.xml` 로 접근하면 됩니다.
 
 - `robots.txt` 파일을 추가합니다. `sitemap.xml` 파일과 같이 최상위 위치에 파일을 추가하는데 sitemap의 링크를 추가하는 파일입니다.
 
