@@ -94,35 +94,7 @@ category_list: [ Project, BackEnd, Algorithm, TIL, Others]
 
 **4) 카테고리 개별 페이지를 위한 `categories/index.html` 파일을 작성합니다.**
 
-```html
----
-layout: default
-permalink: '/categories'
----
-
-<div class="page clearfix">
-    <div class="left">
-        <ul>
-            {% for category in site.categories %}
-            <h1 id="{{category | first}}"><a href="/categories/{{category | first}}">{{category | first}}</a></h1>
-            {% for posts in category %}
-            {% for post in posts %}
-            {% if post.url %}
-            <li>
-                <a class="title" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
-                <time>
-                    {{ post.date | date:"%F" }} {{ post.date | date: "%a" }}.
-                </time>
-            </li>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
-</div>
-```
-<br>
+![image](https://user-images.githubusercontent.com/58318786/112937489-b2f2a100-9162-11eb-8f3a-c1f6f22a70a7.png)
 
 ---
 
@@ -212,73 +184,13 @@ end
 
 - site-map 플러그인을 설치하면 `sitemap.xml` 파일이 생성되는데 만약 플러그인으로 작성되지 않는다면 직접 xml 파일을 추가해주면 됩니다. 최상위 위치로 파일을 생성해주면 되는데 이 파일은 웹사이트에서 접근 가능한 페이지들의 목록을 의미합니다. 구글 검색엔진에 쉽게 등록하기 위한 파일이라고 생각하면 됩니다.
 
-```xml
----
-layout: null
----
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-    <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      {% if post.lastmod == null %}
-        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      {% else %}
-        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
-      {% endif %}
+![image](https://user-images.githubusercontent.com/58318786/112937626-ee8d6b00-9162-11eb-8b99-f0d6aedaa1b5.png)
 
-      {% if post.sitemap.changefreq == null %}
-        <changefreq>weekly</changefreq>
-      {% else %}
-        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-      {% endif %}
-
-      {% if post.sitemap.priority == null %}
-          <priority>0.5</priority>
-      {% else %}
-        <priority>{{ post.sitemap.priority }}</priority>
-      {% endif %}
-
-    </url>
-  {% endfor %}
-</urlset>
-```
 
 - RSS feed.xml 파일 추가하기
 - 웹 콘텐츠 전달을 위해 rss를 추가합니다.
 
-```xml
----
-layout: null
----
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:30 %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
-      </item>
-    {% endfor %}
-  </channel>
-</rss>
-```
+![image](https://user-images.githubusercontent.com/58318786/112938208-2cd75a00-9164-11eb-868e-9c0a7722aca8.png)
 
 - 파일을 추가하고 GitHub에 push해 해당 파일이 생성되었는지 확인합니다.
     - `https://{user}.github.io/sitemap.xml` 로 접근하면 됩니다.
