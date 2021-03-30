@@ -54,7 +54,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-algolia
   - jekyll-sitemap
   # - jemoji #Uncomment this to allow emoji in your post
 
@@ -71,8 +70,6 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec, vendor ]
 category_dir: categories/
 category_list: [ Project, BackEnd, Algorithm, TIL, Others]
 
-# #Scripts
+# Scripts
 
 search                   : true 
-search_full_content      : true
-search_provider          : algolia
