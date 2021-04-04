@@ -1,20 +1,20 @@
 ---
 layout: post
-title: "HandlerMethodArguementResolver"
+title: "HandlerMethodArgumentResolver"
 author: "Poogle"
 categories: [BackEnd]
 sitemap:
   changefreq: daily
   priority: 1.0
 comments: true
-tag: [Pageable, offset, limit, HandlerMethodArguementResolver]
+tag: [Pageable, offset, limit, HandlerMethodArgumentResolver]
 
 ---
 
-# HandlerMethodArguementResolver 사용 방법
+# HandlerMethodArgumentResolver 사용 방법
 > 프로젝트 구현 중 Pageable을 구현하다가 공통적으로 적용되는 offset, limit 파라미터를 위해 HandlerMethodArguementResolver를 공부하게 되었다.
 
-## HandlerMethodArguementResolver란?
+## HandlerMethodArgumentResolver란?
 - Spring MVC에서 공통적으로 사용하는 파라미터 바인딩
 - 특정 클래스나 특정 어노테이션 등의 요청 파라미터를 수정, 조작
 - 인터페이스는 사용자의 요청이 Controller에 도달하기 전에 그 요청의 파라메터들을 수정할 수 있게 도와줌
