@@ -26,7 +26,7 @@ tag: [Project, Photo-Tag, REST]
   * 여러 장을 한 번에 보내면 여러 번 요청할 비용을 줄이는 것에서 의미가 있음
 * GET 요청에 Request Body를 활용해도 되는가?
 
-* [참고한 StackOverFlow](https://stackoverflow.com/questions/978061/http-get-with-request-body)
+> [참고한 StackOverFlow](https://stackoverflow.com/questions/978061/http-get-with-request-body)
 ![스크린샷, 2021-05-20 00-25-07](https://user-images.githubusercontent.com/58318786/118839981-f4513280-b901-11eb-8c75-67bd7b44ec1e.png)
 ![스크린샷, 2021-05-20 00-25-16](https://user-images.githubusercontent.com/58318786/118839987-f5825f80-b901-11eb-8c82-3f468bc6a528.png)
 
