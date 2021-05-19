@@ -1,7 +1,13 @@
 ---
 layout: post
-title: "Example Content"
-author: "Chester"
+title: "Photo Tag 개발기록 - 3"
+author: "Poogle"
+categories: [BackEnd]
+sitemap:
+  changefreq: daily
+  priority: 1.0
+comments: true
+tag: [Project, Photo-Tag]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis. Nullam interdum ultricies nibh quis sollicitudin. Donec ornare fermentum facilisis. Ut at sem ac sem imperdiet varius a eget tortor. Nam eu augue eget orci semper maximus in eget augue. Mauris ornare, nisl ut suscipit consectetur, mi quam interdum tellus, at rutrum quam eros ultrices mi.
