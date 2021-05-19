@@ -2,7 +2,7 @@
 layout: post
 title: "Photo Tag 개발기록 - 3"
 author: "Poogle"
-categories: [BackEnd]
+categories: [Project]
 sitemap:
   changefreq: daily
   priority: 1.0
