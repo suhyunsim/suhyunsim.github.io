@@ -7,7 +7,7 @@ sitemap:
   changefreq: daily
   priority: 1.0
 comments: true
-tag: [Project, Photo-Tag]
+tag: [Project, Photo-Tag, REST]
 
 ---
 
