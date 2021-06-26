@@ -44,6 +44,7 @@ String[] arr = list.toArray(new String[arr.size()]);
 ```
 ## int일 때
 * primitive 타입(int)을 wrapper 클래스(Integer)으로
+
 ### Array -> List
 ```java
 int[] arr = {1, 2, 3};
