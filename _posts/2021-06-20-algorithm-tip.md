@@ -51,6 +51,7 @@ List<Integer> list = Arrays.stream(arr)
                             .boxed()
                             .collect(Collectors.toList());
 ```
+
 ### List -> Array
 ```java
 ArrayList<Integer> list = new ArrayList<Integer>();
