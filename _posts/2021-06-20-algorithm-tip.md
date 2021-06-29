@@ -96,3 +96,69 @@ for (Map.Entry<Integer, Integer> m : map.entrySet()) {
 }
 ```
 * value 값에 중복이 있을 때 최대 value값을 갖는 key를 찾기 위해서 -> max값을 한 번 찾고 Map을 순회해서 같은 최대값들을 찾아내기
+
+### Map 정렬하기 - List를 이용
+* keySet이나 values를 List로 가져와서 정렬하기
+
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("Poogle", 3);
+map.put("Lena", 1);
+map.put("Solar", 2);
+map.put("Jay", 5);
+
+List<String> keyList = new ArrayList<>(map.keySet());
+keyList.sort((s1, s2) -> s1.compareTo(s2));
+// keyList.sort(String::compareTo); 도 가능
+
+for (String key : keyList) {
+    System.out.println("key: " + key);
+}
+```
+### Map 정렬하기 - Collections.sort 이용(오름차순,  내림차순)
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("Poogle", 3);
+map.put("Lena", 1);
+map.put("Solar", 2);
+map.put("Jay", 5);
+
+List<String> keyList = new ArrayList<>(map.keySet());
+
+//오름차순
+Collections.sort(keyList, (value1, value2) -> (map.get(value1).compareTo(map.get(value2))));
+
+//내림차순
+Collections.sort(keyList, (value1, value2) -> (map.get(value2).compareTo(map.get(value1))));
+
+for (String key : keyList) {
+    System.out.println("key: " + key);
+    System.out.println("value: " + map.get(key));
+}
+
+```
+
+### Map 정렬하기 - Stream을 이용
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("Poogle", 3);
+map.put("Lena", 1);
+map.put("Solar", 2);
+map.put("Jay", 5);
+
+//key로 정렬하기
+List<Map.Entry<String, Integer>> entries = map.entrySet().stream()
+        .sorted(Map.Entry.comparingByKey())
+        .collect(Collectors.toList());
+
+//value로 정렬하기
+entries = map.entrySet().stream()
+        .sorted(Map.Entry.comparingByValue())
+        .collect(Collectors.toList());
+
+for (Map.Entry<String, Integer> entry : entries) {
+    System.out.println("key: " + entry.getKey());
+    System.out.println("value: " + entry.getValue());
+}
+```
+
