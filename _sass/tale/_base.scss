@@ -11,9 +11,8 @@ body {
 }
 
 html {
-//  font-family: $source;
-//  font-family: $serif-primary;
-  font-family: $sans-serif;
+  font-family: $source; //한글 위해서 적용한 폰트
+// font-family: $serif-primary; //default -> 한글 깨짐
   font-size: 14px;
   overflow-y: scroll;
 
@@ -33,8 +32,8 @@ h4,
 h5,
 h6 {
   color: $default-shade;
-//  font-family: $source;
-  font-family: $sans-serif;
+  font-family: $source;
+  // font-family: $sans-serif;
   line-height: normal;
 }
 
