@@ -17,12 +17,21 @@ If you want to contact me, please feel free to leave me a message!
 
 Thanks for reading!
 
-# Projects
+<!-- # Projects
 * 
 * 
-* 
+*  -->
+
+<br>
 
 # Experiences
+### **[프로그래머스 K-Digital Training: 클라우드 기반 백엔드 엔지니어링](https://programmers.co.kr/learn/courses/12177)** 2021.08 ~ 
+* 과정 진행중
+
+### **[42 Seoul 이노베이션아카데미](https://42seoul.kr/)** 2020.11 ~ 2021.05
+* 3기 La Piscine 수료
+* 3기 본과정
+
 ### **[코드스쿼드](https://codesquad.kr/) 마스터즈 코스** 2020.01 - 2020.06
 * 백엔드(Java) 과정 수료
 
