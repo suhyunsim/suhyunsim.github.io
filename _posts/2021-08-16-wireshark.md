@@ -7,13 +7,18 @@ sitemap:
   changefreq: daily
   priority: 1.0
 comments: true
-tag: [Wireshark, ]
+tag: [Wireshark, TCPHeader]
 
 ---
 
 # Wireshark란?
 
-# 패킷
+![image](https://user-images.githubusercontent.com/58318786/130044949-4a2167cc-5d1c-4100-ad63-b6f707589b0e.png)
+
+* 네트워크 패킷 캡쳐, 분석하는 오픈소스 도구
+* 해킹, 보안 취약점 분석, 보안 컨설팅 등 여러 분야에서 사용
+* 네트워크 상의 데이터인 패킷을 수신하여 저장
+* 운영체제에서 지원하는 캡쳐 라이브러리 이용하여 수집
 
 # Wireshark 설치 방법 - Ubuntu 20.04 기준
 
@@ -102,3 +107,13 @@ $ gnome-session-quit--logout --no-prompt #로그아웃
 ![image](https://user-images.githubusercontent.com/58318786/130043402-55a64694-0bab-4687-af79-f3c3118e477f.png)
 
 * `application/json` 형식으로 수정할 내용을 Request Boday에 넣어서 요청 -> 확인 가능
+
+### TCP 헤더 Flag 변경 확인
+
+![image](https://user-images.githubusercontent.com/58318786/130047834-31038713-a0ae-4dca-b2b6-39d5c6400487.png)
+
+* ACK(Acknowledgement): 필드에 값이 채워져있음을 알림
+* RST(Reset): 이미 연결이 확립되어 Established 상태인 상대방에게 연결을 강제로 리셋해달라는 요청의 의미
+* PSH(Push): 수신 측에게 이 데이터 최대한 빨리 전달해달라는 의미, 0일 때 수신 측은 자신의 버퍼가 다 채워질 때까지 기다림, 1일 때는 이 세그먼트 이후에 더 이상 연결된 세그먼트가 없음을 의미하기도 함
+* SYN(Synchronize): 상대방과 연결 생성 시 시퀀스 번호의 동기화를 맞추기 위한 세그먼트임을 의미
+* FIN(Finish): 상대방과 연결을 종료하고 싶다는 의미
