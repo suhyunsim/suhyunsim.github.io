@@ -2,7 +2,7 @@
 layout: post
 title: "Wireshark 설치와 패킷 캡처 실습"
 author: "Poogle"
-categories: [Backend]
+categories: [BackEnd]
 sitemap:
   changefreq: daily
   priority: 1.0
