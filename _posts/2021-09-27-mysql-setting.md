@@ -116,6 +116,10 @@ grant all on testdb.* to 'poogle'@'%' with grant option;
 flush privileges;
 ```
 
+---
+
+<br>
+
 # MySQL 삭제
 
 * 설정 파일 포함 삭제 
@@ -140,6 +144,66 @@ sudo apt-get autoremove
 sudo apt-get autoclean
 ```
 
+---
+
+<br>
+
+# MySQL 연동 오류 모음
+
+## CommunicationsException
+```
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+```
+
+* MySQL 디폴트 타임아웃
+  * 커넥션 생성 후 타임아웃 기간이 지날 동안 사용되지 않으면 커넥션 종료됨
+* DBCP configuration에 jdbc url 설정 시
+  * `autoReconnect=true`
+  * `validationQuery="select 1"`
+
+```
+jdbc:mysql://localhost:3306/{dbname}?{다른 설정들}&autoReconnect=true&validationQuery="select 1"
+```
+
+## Can't connect ~ through socket
+
+```
+Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'
+```
+
+> 참고: [error: 'Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)' -- Missing /var/run/mysqld/mysqld.sock](https://stackoverflow.com/questions/11990708/error-cant-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysq)
+
+* 소켓 파일 (`mysql.sock`) 경로를 못 찾는 에러 (Case by Case... 문제의 원인 및 해결 방법이 많음)
+
+1. 재시작: `$ sudo service mysql start`
+2. `$ sudo find / -type s`로 `mysql.sock` 파일 위치 찾기
+  * `my.cnf` 파일 경로 수정
+  * `socket = /var/lib/mysql/mysql.sock`
+3. MySQL multi installations일 때
+
+```bash
+# 확인 - mysql
+ps -A|grep mysql
+
+# kill process
+sudo pkill mysql
+
+# 확인 - mysqld
+ps -A|grep mysqld
+
+# kill process
+sudo pkill mysqld
+```
+
+## public key retrieval is not allowed
+* MySQL 8.0 이후 접속 시 생기는 문제
+* `allowPublicKeyRetrieval=true` 추가
+
+```
+jdbc:mysql://localhost:3306/{dbname}?{다른 설정들}&allowPublicKeyRetrieval=true
+```
+
+---
 
 > 참고: [MySQL 완전 삭제 (Ubuntu/Debian)](https://velog.io/@moorekwon/MySQL-%EC%99%84%EC%A0%84-%EC%82%AD%EC%A0%9C)
 
