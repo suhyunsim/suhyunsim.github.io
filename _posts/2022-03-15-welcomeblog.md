@@ -7,7 +7,7 @@ sitemap:
   changefreq: daily
   priority: 1.0
 comments: true
-tag: [jeykyll]
+tag: [jeykyll, ruby]
 
 ---
 
@@ -43,32 +43,32 @@ _(참고: 해당 포스트는 Jekyll 블로그 생성기가 아니고 블로그�
 * rbenv 설치는 아래와 같습니다. _brew와 rbenv가 설치되어 있다면 넘어가주세요!_
 
 ---
-```shell
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 * hombrew를 설치해줍니다.
 
 ---
-```shell
+```sh
 brew install rbenv
 ```
 * rbenv를 설치해줍니다.
 
 ---
-```shell
+```sh
 rbenv install -l
 ```
 * 설치할 수 있는 Ruby 버전을 확인할 수 있습니다.
 * Mac의 경우 설치하려는 버전이 없을 때 `brew upgrade ruby-build` 명령어를 실행해 리스트를 업데이트 할 수 있습니다.
 
 ---
-```shell
+```sh
 rbenv install 3.0.3
 ```
 * Ruby 3.0.3버전을 설치해보겠습니다.
 
 ---
-```shell
+```sh
 rbenv versions
 ```
 * 설치 되어있는 Ruby 버전들을 확인할 수 있습니다.
@@ -77,16 +77,16 @@ rbenv versions
 * 처음에 3.1.1 버전을 설치했다가 버전을 낮춰야 할 일이 있어서 3.0.3을 추가로 설치한 상태입니다.
 
 ---
-```shell
+```sh
 rbenv global 3.0.3
 ```
 * 원하는 버전의 Ruby를 사용하도록 설정해줍니다.
 
 ---
-```shell
+```sh
 vim ~/.zshrc
 ```
-```shell
+```sh
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
@@ -94,7 +94,7 @@ vim ~/.zshrc
 * 쉘 설정 파일인 .zshrc에 (혹은 .bashrc) rbenv PATH를 추가해줍니다.
 
 ---
-```shell
+```sh
 source ~/.zshrc
 ```
 * 설정을 적용합니다.
@@ -105,13 +105,13 @@ source ~/.zshrc
 * Bundler는 필요한 gem과 gem 버전을 설치하는 도구입니다.
 > 참고: https://rubygems.org/ : gem들을 찾을 수 있는 사이트
 
-```shell
+```sh
 gem install bundler
 ```
 * Bundler를 설치해줍니다.
 
 ---
-```shell
+```sh
 bundle install
 bundle update
 ```
@@ -123,7 +123,7 @@ bundle update
 ---
 ## ✅ Jekyll 설치
 
-```shell
+```sh
 gem install jekyll bundler
 ```
 * Ruby를 활용해 jekyll gem을 설치합니다.
@@ -141,7 +141,7 @@ gem install jekyll bundler
 
 # 실행
 
-```shell
+```sh
 bundle exec jekyll serve
 ```
 * Gemfile에 따라 jekyll을 실행합니다.
@@ -150,7 +150,7 @@ bundle exec jekyll serve
 
 * 이제 `localhost:4000`에서 실행된 블로그를 볼 수 있습니다.😆
 * 변경이 생기고 새로고침하면 바로 반영됩니다.
-```shell
+```sh
 --livereload: config.yml 파일 이외의 파일에서 갱신이 생기면 새로고침
 --incremental: 갱신이 발생할 때 부분 빌드 실행
 --drafts: 초안 포함해서 사이트 미리보기
@@ -171,7 +171,7 @@ _아래는 제가 블로그를 로컬에서 실행하면서 찍혔던 버그들�
 <img width="870" alt="image" src="https://user-images.githubusercontent.com/58318786/158420300-b44221a1-0d11-4c51-99c0-098383716d16.png">
 
 * webrick 로드 오류
-```shell
+```sh
 bundle add webrick
 ```
 * webrick을 추가합니다. 추가된 gem은 Gemfile에서 확인할 수 있습니다.
