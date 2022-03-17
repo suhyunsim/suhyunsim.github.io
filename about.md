@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "About"
-author: "Suhyun Sim"
+title: About
 permalink: /about/
 ---
 
