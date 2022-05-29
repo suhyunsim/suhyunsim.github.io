@@ -9,3 +9,5 @@ Gemfile.lock
 
 .jekyll-cache
 .jekyll-metadata
+
+.idea
