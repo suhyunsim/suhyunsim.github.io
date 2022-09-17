@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker에서 PosgreSQL 사용하기"
+title: "Docker에서 PostgreSQL 사용하기"
 author: "Poogle"
 categories: [BackEnd]
 sitemap:
