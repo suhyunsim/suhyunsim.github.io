@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Doker와 Kubernetes"
+title: "Docker와 Kubernetes"
 author: "Poogle"
 categories: [BackEnd]
 sitemap:
