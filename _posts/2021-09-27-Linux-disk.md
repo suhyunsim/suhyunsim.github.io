@@ -75,6 +75,7 @@ sudo apt-get autoclean
 
 # 전체 캐시 삭제
 sudo apt-get autoclean
+```
 
 ### Thumbnail 캐시 삭제
 
