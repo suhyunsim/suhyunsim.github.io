@@ -30,7 +30,7 @@ Docker와 Kubernetes에 대해 정리합니다.
 * OS를 각각 설치하기 때문에 리소스 낭비가 있습니다.
 
 ### Container
-* 어플리케이션을 구동하는 환경을 격리한 Space가
+* 어플리케이션을 구동하는 환경을 격리한 Space
 * Server -> Docker Engine -> Container
 * VM에 비해 오버헤드가 적습니다.
 
