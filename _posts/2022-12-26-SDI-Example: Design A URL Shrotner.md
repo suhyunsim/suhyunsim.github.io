@@ -15,9 +15,9 @@ tag: [System Design Interview]
 > 
 > [책 - 가상 면접 사례로 배우는 대규모 시스템 설계 기초](http://www.yes24.com/Product/Goods/102819435)
 >
-> [URL shortener system design | tinyurl system design | bitly system design](https://www.youtube.com/watch?v=JQDHz72OA3c)
+> [유튜브 - URL shortener system design, tinyurl system design, bitly system design](https://www.youtube.com/watch?v=JQDHz72OA3c)
 > 
-> [System Design : Design a service like TinyUrl](https://www.youtube.com/watch?v=fMZMm_0ZhK4)
+> [유튜브 - System Design : Design a service like TinyUrl](https://www.youtube.com/watch?v=fMZMm_0ZhK4)
 
 # Example - Design A URL Shortener
 ## Step 1
